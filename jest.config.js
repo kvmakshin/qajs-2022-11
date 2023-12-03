@@ -197,12 +197,34 @@
 
 // module.exports = config;
 
-export default {
+// export default {
+//   testMatch: ["./src/specs/five_api_tests.spec.js"],
+//   transform: {
+//     "^.+\\.[t|j]sx?$": "babel-jest",
+//   },
+//   reporters: ["default", "jest-allure"],
+//   testRunner: "jest-jasmine2",
+//   setupFilesAfterEnv: ["jest-allure/dist/setup"],
+// };
+
+module.exports = {
   testMatch: ["./src/specs/five_api_tests.spec.js"],
   transform: {
     "^.+\\.[t|j]sx?$": "babel-jest",
   },
-  reporters: ["default", "jest-allure"],
+  reporters: [
+    "default",
+    "jest-allure",
+    [
+      "jest-html-reporter",
+      {
+        pageTitle: "Test Report",
+        outputPath: "./test-report.html",
+        includeFailureMsg: true,
+        includeConsoleLog: true,
+      },
+    ],
+  ],
   testRunner: "jest-jasmine2",
   setupFilesAfterEnv: ["jest-allure/dist/setup"],
 };
