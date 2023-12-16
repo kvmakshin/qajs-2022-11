@@ -208,7 +208,7 @@
 // };
 
 module.exports = {
-  testMatch: ["./src/specs/five_api_tests.spec.js"],
+  testMatch: ["**/*.spec.js"],
   transform: {
     "^.+\\.[t|j]sx?$": "babel-jest",
   },

@@ -6,3 +6,7 @@ coverage
 allure-report
 allure-results
 test-report.html
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
